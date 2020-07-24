@@ -29,6 +29,10 @@
   ],
   "rules": {
     "prettier/prettier": "error",
+    "class-methods-use-this": "off",
+    "max-classes-per-file": "off",
+    "import/prefer-default-export": "off",
+    "no-useless-constructor": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
