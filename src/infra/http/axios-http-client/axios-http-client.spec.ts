@@ -14,7 +14,7 @@ const makeSut = (): AxiosHttpClient => {
 
 const mockPostRequest = (): HttpPostParams<any> => ({
   url: faker.internet.url(),
-  body: faker.random.objectElement,
+  body: faker.random.objectElement(),
 });
 
 describe('AxiosHttpClient', () => {
@@ -25,6 +25,6 @@ describe('AxiosHttpClient', () => {
 
     await sut.post(request);
 
-    expect(mockedAxios.post).toHaveBeenCalledWith(request.url);
+    expect(mockedAxios.post).toHaveBeenCalledWith(request.url, request.body);
   });
 });
