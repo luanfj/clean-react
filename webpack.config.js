@@ -1,5 +1,8 @@
 const path = require('path');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   mode: 'development',
@@ -15,6 +18,17 @@ module.exports = {
       '@': path.join(__dirname, 'src')
     }
   },
+  module: {
+    rules: [
+      {
+        test: /\.(js|ts|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      }
+    ]
+  },
   devServer: {
     contentBase: './public',
     writeToDisk: true,
@@ -25,6 +39,7 @@ module.exports = {
     'react-dom': 'ReactDOM'
   },
   plugins: [
+    isDevelopment && new ReactRefreshWebpackPlugin(),
     new CleanWebpackPlugin()
   ]
 };

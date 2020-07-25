@@ -34,6 +34,8 @@
     "import/prefer-default-export": "off",
     "no-useless-constructor": "off",
     "import/no-extraneous-dependencies": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
