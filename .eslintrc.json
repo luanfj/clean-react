@@ -33,6 +33,7 @@
     "max-classes-per-file": "off",
     "import/prefer-default-export": "off",
     "no-useless-constructor": "off",
+    "import/no-extraneous-dependencies": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
